@@ -83,10 +83,10 @@ Neither script writes back to the host project; all output goes to stdout.
 
 ```bash
 # Skill-level wrappers (run from the host project root):
-npx tsx skills/ts-file-overviews/scripts/priority-session.ts --limit 15
-npx tsx skills/ts-file-overviews/scripts/priority-session.ts --limit 10 --json
-npx tsx skills/ts-file-overviews/scripts/priority-session.ts --package my-lib --limit 10
-npx tsx skills/ts-file-overviews/scripts/target-update-brief.ts --file packages/my-lib/src/index.ts
+npx tsx .agents/skills/ts-file-overviews/scripts/priority-session.ts --limit 15
+npx tsx .agents/skills/ts-file-overviews/scripts/priority-session.ts --limit 10 --json
+npx tsx .agents/skills/ts-file-overviews/scripts/priority-session.ts --package my-lib --limit 10
+npx tsx .agents/skills/ts-file-overviews/scripts/target-update-brief.ts --file packages/my-lib/src/index.ts
 
 # Host-project audit scripts (wired in the host's package.json):
 npm run file-overview-standards:priority-targets
@@ -168,19 +168,19 @@ Read [`SKILL.md`](./SKILL.md) first — it carries the workflow steps, non-negot
 
 ```bash
 # From the host project root:
-npx tsx skills/ts-file-overviews/scripts/priority-session.ts --limit 15
+npx tsx .agents/skills/ts-file-overviews/scripts/priority-session.ts --limit 15
 
 # Scope to one package:
-npx tsx skills/ts-file-overviews/scripts/priority-session.ts --package my-lib --limit 10
+npx tsx .agents/skills/ts-file-overviews/scripts/priority-session.ts --package my-lib --limit 10
 
 # JSON output for downstream tooling:
-npx tsx skills/ts-file-overviews/scripts/priority-session.ts --limit 10 --json
+npx tsx .agents/skills/ts-file-overviews/scripts/priority-session.ts --limit 10 --json
 ```
 
 4. Before editing any file, generate its structural brief:
 
 ```bash
-npx tsx skills/ts-file-overviews/scripts/target-update-brief.ts --file packages/my-lib/src/utils.ts
+npx tsx .agents/skills/ts-file-overviews/scripts/target-update-brief.ts --file packages/my-lib/src/utils.ts
 ```
 
 5. Re-read the target file and verify every retained claim against the current code, then normalize the header.

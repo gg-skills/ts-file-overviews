@@ -8,17 +8,17 @@
  * @example
  * ```bash
  * # Run an interactive session for the top 15 targets
- * npx tsx skills/ts-file-overviews/scripts/priority-session.ts
+ * npx tsx .agents/skills/ts-file-overviews/scripts/priority-session.ts
  *
  * # JSON output for the top 10 targets across all packages
- * npx tsx skills/ts-file-overviews/scripts/priority-session.ts --limit 10 --json
+ * npx tsx .agents/skills/ts-file-overviews/scripts/priority-session.ts --limit 10 --json
  *
  * # Scope to a single package (name from .ts-file-overviews.json)
- * npx tsx skills/ts-file-overviews/scripts/priority-session.ts --package my-lib --limit 10
+ * npx tsx .agents/skills/ts-file-overviews/scripts/priority-session.ts --package my-lib --limit 10
  * ```
  *
- * @testing CLI: `npx tsx skills/ts-file-overviews/scripts/priority-session.ts --limit 10`
- * @testing CLI: `npx tsx skills/ts-file-overviews/scripts/priority-session.ts --package my-lib --limit 10`
+ * @testing CLI: `npx tsx .agents/skills/ts-file-overviews/scripts/priority-session.ts --limit 10`
+ * @testing CLI: `npx tsx .agents/skills/ts-file-overviews/scripts/priority-session.ts --package my-lib --limit 10`
  * @see scripts/file-overview-standards/priority-targets.ts - Root ranking command whose scored targets are surfaced here as the main remediation queue.
  * @see skills/ts-file-overviews/scripts/target-update-brief.ts - Companion skill script that drills into one selected target after this session identifies it.
  * @documentation reviewed=2026-04-30 standard=FILE_OVERVIEW_STANDARDS_TYPESCRIPT@3
@@ -169,7 +169,7 @@ function main(): void {
 
   process.stdout.write("\nNext step: run the target brief for one file with:\n");
   process.stdout.write(
-    "npx tsx skills/ts-file-overviews/scripts/target-update-brief.ts --file <repo-relative-path>\n",
+    "npx tsx .agents/skills/ts-file-overviews/scripts/target-update-brief.ts --file <repo-relative-path>\n",
   );
   process.stdout.write(
     "Then re-read the selected file end to end to verify retained file-overview claims and any related symbol-level JSDoc decisions against the current code.\n",

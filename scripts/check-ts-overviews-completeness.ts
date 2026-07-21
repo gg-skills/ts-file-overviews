@@ -6,8 +6,8 @@
  * This file owns the checklist definition, synchronous `.ts-file-overviews.json` existence and coarse shape validation, console narrative output, weighted scoring with required-item gating, and optional `--json` emission of a `CompletenessReport`. Items after config validation are marked checked under static assumptions that the operator is following the skill workflow.
  * Flow: parse argv -> `checkConfig(cwd)` -> synthesize checklist rows -> print score and readiness -> optionally append JSON.
  *
- * @testing CLI: `npx tsx skills/ts-file-overviews/scripts/check-ts-overviews-completeness.ts`
- * @testing CLI: `npx tsx skills/ts-file-overviews/scripts/check-ts-overviews-completeness.ts --json`
+ * @testing CLI: `npx tsx .agents/skills/ts-file-overviews/scripts/check-ts-overviews-completeness.ts`
+ * @testing CLI: `npx tsx .agents/skills/ts-file-overviews/scripts/check-ts-overviews-completeness.ts --json`
  * @see docs/TYPESCRIPT_STANDARDS_DOCUMENTATION_FILE_OVERVIEWS.md - Repository authority for file-overview tags and review metadata that this checklist is meant to support.
  * @see skills/ts-file-overviews/scripts/priority-session.ts - Companion operator session that ranks remediation targets using the same `.ts-file-overviews.json` package entries validated here as checklist item 1.
  * @documentation reviewed=2026-05-22 standard=FILE_OVERVIEW_STANDARDS_TYPESCRIPT@3

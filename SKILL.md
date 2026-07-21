@@ -65,13 +65,13 @@ package names exist in the scripts themselves.
 
 ```bash
 # Run an interactive session for the top 15 targets
-npx tsx skills/ts-file-overviews/scripts/priority-session.ts --limit 15
+npx tsx .agents/skills/ts-file-overviews/scripts/priority-session.ts --limit 15
 
 # JSON output for the top 10 targets across all packages
-npx tsx skills/ts-file-overviews/scripts/priority-session.ts --limit 10 --json
+npx tsx .agents/skills/ts-file-overviews/scripts/priority-session.ts --limit 10 --json
 
 # Scope to a single package (name must match an entry in .ts-file-overviews.json)
-npx tsx skills/ts-file-overviews/scripts/priority-session.ts --package my-lib --limit 10
+npx tsx .agents/skills/ts-file-overviews/scripts/priority-session.ts --package my-lib --limit 10
 ```
 
 For the full command surface and flag reference, see `references/command-contract.md`.
@@ -102,7 +102,7 @@ For the full command surface and flag reference, see `references/command-contrac
 
 | Scenario | Recommended command |
 |----------|---------------------|
-| First pass: see overall health | `npx tsx skills/ts-file-overviews/scripts/priority-session.ts --limit 15` |
+| First pass: see overall health | `npx tsx .agents/skills/ts-file-overviews/scripts/priority-session.ts --limit 15` |
 | Find the best next target to fix | host project `file-overview-standards:priority-targets` script |
 | Check one file before editing | host project `file-overview-standards:target-brief -- --file <repo-relative-path>` script |
 | Find stale standard versions | host project `file-overview-standards:stale-standard-version` script |

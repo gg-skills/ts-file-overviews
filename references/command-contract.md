@@ -79,7 +79,7 @@ Useful flags:
 
 ## Skill Workflow Commands
 
-### `npx tsx skills/ts-file-overviews/scripts/priority-session.ts`
+### `npx tsx .agents/skills/ts-file-overviews/scripts/priority-session.ts`
 
 Purpose:
 
