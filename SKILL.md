@@ -65,6 +65,7 @@ package names exist in the scripts themselves.
 
 ```bash
 # Run an interactive session for the top 15 targets
+# Runner alternatives: bunx tsx / pnpm dlx tsx / deno run -A npm:tsx / node --import tsx / yarn dlx tsx
 npx tsx .agents/skills/ts-file-overviews/scripts/priority-session.ts --limit 15
 
 # JSON output for the top 10 targets across all packages
@@ -102,7 +103,7 @@ For the full command surface and flag reference, see `references/command-contrac
 
 | Scenario | Recommended command |
 |----------|---------------------|
-| First pass: see overall health | `npx tsx .agents/skills/ts-file-overviews/scripts/priority-session.ts --limit 15` |
+| First pass: see overall health | `npx tsx .agents/skills/ts-file-overviews/scripts/priority-session.ts --limit 15`[^rt] |
 | Find the best next target to fix | host project `file-overview-standards:priority-targets` script |
 | Check one file before editing | host project `file-overview-standards:target-brief -- --file <repo-relative-path>` script |
 | Find stale standard versions | host project `file-overview-standards:stale-standard-version` script |
@@ -278,3 +279,5 @@ The `references/` directory contains **1 file** and has **no nested subfolders**
 - Host project's file-overview standards document -- Canonical format document that defines header order, metadata requirements, and tag semantics. Consumers must supply this; the skill does not bundle it.
 - Host project's JSDoc standards document -- Canonical source for symbol-level operational JSDoc standards.
 - Host project's documentation-sync workflow -- Hand off to this when a normalization pass also changes adjacent docs, guidance files, or workflow prompts.
+
+[^rt]: `npx tsx` accepts any standard runner — `bunx tsx`, `pnpm dlx tsx`, `deno run -A npm:tsx`, `node --import tsx`, or `yarn dlx tsx`. The first five auto-fetch `tsx` on demand; only `node --import tsx` requires `tsx` to be installed locally first (`npm i -D tsx`, or `npm i -g tsx` if you cannot reach the npm registry). Bun users can also skip `tsx` entirely and run TypeScript directly via `bun <script>`. Pick whichever your project ships. The canonical runtime decision table lives in the `skills-manager` skill under `Runtime Selection` (only available when working in the full `gg-skills` monorepo).
