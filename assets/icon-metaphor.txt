@@ -1,0 +1,1 @@
+A highlighted heading brings a source file’s purpose into focus before the reader reaches the code.
